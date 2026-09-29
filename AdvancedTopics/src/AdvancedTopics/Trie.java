@@ -77,8 +77,48 @@ public class Trie {
         }return true;
 
     }
-    public static void main(String [] args){
-        
+    public static void main(String[] args) {
+
+        Trie t = new Trie();
+
+        // Insert words
+        t.insert("apple");
+        t.insert("app");
+        t.insert("application");
+        t.insert("apply");
+        t.insert("banana");
+
+        // contains()
+        System.out.println("Contains apple: " + t.contains("apple"));
+        System.out.println("Contains app: " + t.contains("app"));
+        System.out.println("Contains appl: " + t.contains("appl"));
+        System.out.println("Contains banana: " + t.contains("banana"));
+        System.out.println();
+
+        // startsWith()
+        System.out.println("Starts with app: " + t.startsWith("app"));
+        System.out.println("Starts with appl: " + t.startsWith("appl"));
+        System.out.println("Starts with ban: " + t.startsWith("ban"));
+        System.out.println("Starts with cat: " + t.startsWith("cat"));
+        System.out.println();
+
+        // countPrefix()
+        System.out.println("Words starting with 'app': " + t.countPrefix("app"));
+        System.out.println("Words starting with 'appl': " + t.countPrefix("appl"));
+        System.out.println("Words starting with 'ban': " + t.countPrefix("ban"));
+        System.out.println("Words starting with 'cat': " + t.countPrefix("cat"));
+        System.out.println();
+
+        // Delete
+        System.out.println("Delete apple: " + t.delete("apple"));
+        System.out.println("Contains apple: " + t.contains("apple"));
+        System.out.println("Contains app: " + t.contains("app"));
+        System.out.println("Words starting with 'app': " + t.countPrefix("app"));
+        System.out.println();
+
+        // Try deleting something that doesn't exist
+        System.out.println("Delete apple again: " + t.delete("apple"));
+        System.out.println("Delete mango: " + t.delete("mango"));
     }
 
 }

@@ -18,7 +18,7 @@ public class Trie {
             char c = word.charAt(i);
 
             int idx = c - 'a';
-            if(cur.next[idx]==null) cur.next[idx]=new Node;
+            if(cur.next[idx]==null) cur.next[idx]=new Node();
 
             cur = cur.next[idx];
             cur.pass++;
